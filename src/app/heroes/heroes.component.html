@@ -1,0 +1,17 @@
+<p>
+  Primeiro Herói: {{ heroes[0].name }}
+</p>
+<h3>Lista de Heróis:</h3>
+<ul *ngFor="let heroe of heroes" >
+  <li>
+    <span>id: </span>{{ heroe.id }}<br/>
+    <span>name: </span>{{ heroe.name | uppercase }}<br/>
+    <span>power: </span>{{ heroe.power | lowercase }}<br/>
+    <span>register: </span>{{ heroe.dateRegister | date: 'dd/MM/yyyy' }}<br/>
+  </li>
+</ul>
+
+<div>
+  <label>name:</label>
+  <input [(ngModel)]="heroes[0].name" placeholder="Input name of heroe"/>
+</div>
