@@ -4,10 +4,10 @@
 <h3>Lista de Heróis:</h3>
 <ul *ngFor="let heroe of heroes" >
   <li>
-    <span>id: </span>{{ heroe.id }}<br/>
-    <span>name: </span>{{ heroe.name | uppercase }}<br/>
-    <span>power: </span>{{ heroe.power | lowercase }}<br/>
-    <span>register: </span>{{ heroe.dateRegister | date: 'dd/MM/yyyy' }}<br/>
+    <span>id: </span>{{ hero.id }}<br/>
+    <span>name: </span>{{ hero.name | uppercase }}<br/>
+    <span>power: </span>{{ hero.power | lowercase }}<br/>
+    <span>register: </span>{{ hero.dateRegister | date: 'dd/MM/yyyy' }}<br/>
   </li>
 </ul>
 

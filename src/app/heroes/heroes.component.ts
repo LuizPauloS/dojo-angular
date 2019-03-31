@@ -1,5 +1,6 @@
-import { Heroe } from './../model/heroe';
 import { Component, OnInit } from '@angular/core';
+
+import { Heroe } from '../model/hero';
 
 @Component({
   selector: 'app-heroes',
@@ -9,13 +10,13 @@ import { Component, OnInit } from '@angular/core';
 export class HeroesComponent implements OnInit {
 
   heroes: Heroe[];
-  heroe: Heroe;
+  hero: Heroe;
 
   constructor() { }
 
   ngOnInit() {
     this.heroes = [];
-    this.heroes.push(this.heroe = new Heroe(1, 'Capitão América', 'Força Sobrenatural', new Date()));
+    this.heroes.push(this.hero = new Heroe(1, 'Capitão América', 'Força Sobrenatural', new Date()));
     this.heroes.push({ id: 2, name: 'Batman', power: 'Homem Morcego', dateRegister: new Date() });
   }
 
