@@ -26,27 +26,8 @@
           </li>
         </ul>
       </div>
-      <div *ngIf="selectedHero">
-        <hr>
-        <h3>{{selectedHero.name | uppercase }}</h3>
-        <div class="form-group">
-            <label for="id">Id</label>
-            <input type="text" class="form-control" id="id" [(ngModel)]="selectedHero.id" disabled=true>
-          </div>
-        <div class="form-group">
-          <label for="name">Name</label>
-          <input type="text" class="form-control" id="name" [(ngModel)]="selectedHero.name" placeholder="Informe nome do herói">
-        </div>
-        <div class="form-group">
-          <label for="power">Password</label>
-          <input type="text" class="form-control" id="power" [(ngModel)]="selectedHero.power" placeholder="Informe o poder do herói">
-        </div>
-        <div class="form-group">
-          <label for="dateRegister">Date Register</label>
-          <input type="text" class="form-control" id="dateRegister" [(ngModel)]="selectedHero.dateRegister" disabled=true>
-        </div>
+      <app-detail-hero [hero]=selectedHero></app-detail-hero>
       </div>
     </div>
   </div>
-</div>
 <div>

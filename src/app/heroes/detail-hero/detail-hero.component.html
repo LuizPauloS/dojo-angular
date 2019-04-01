@@ -1,0 +1,20 @@
+<div *ngIf="hero">
+  <hr>
+  <h3>{{ hero.name | uppercase }}</h3>
+  <div class="form-group">
+      <label for="id">Id</label>
+      <input type="text" class="form-control" id="id" [(ngModel)]="hero.id" disabled=true>
+    </div>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" id="name" [(ngModel)]="hero.name" placeholder="Informe nome do herói">
+  </div>
+  <div class="form-group">
+    <label for="power">Password</label>
+    <input type="text" class="form-control" id="power" [(ngModel)]="hero.power" placeholder="Informe o poder do herói">
+  </div>
+  <div class="form-group">
+    <label for="dateRegister">Date Register</label>
+    <input type="text" class="form-control" id="dateRegister" [(ngModel)]="hero.dateRegister" disabled=true>
+  </div>
+</div>

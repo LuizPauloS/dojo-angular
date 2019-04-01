@@ -7,11 +7,13 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 import { HeroesComponent } from './heroes/heroes.component';
+import { DetailHeroComponent } from './heroes/detail-hero/detail-hero.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    HeroesComponent
+    HeroesComponent,
+    DetailHeroComponent
   ],
   imports: [
     BrowserModule,
