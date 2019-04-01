@@ -1,3 +1,4 @@
+import { HeroesService } from './heroes.service';
 import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../model/hero';
@@ -13,14 +14,15 @@ export class HeroesComponent implements OnInit {
   hero: Hero;
   heroes: Hero[];
   selectedHero: Hero;
-  heroesMock: Hero[] = HEROES;
+  heroesMock: Hero[];
 
-  constructor() { }
+  constructor(private heroesService: HeroesService) { }
 
   ngOnInit() {
     this.heroes = [];
     this.heroes.push(this.hero = new Hero(1, 'Capitão América', 'Força Sobrenatural', new Date()));
     this.heroes.push({ id: 2, name: 'Batman', power: 'Homem Morcego', dateRegister: new Date() });
+    this.getListMockHeroes();
   }
 
   onSelectHero(hero: Hero): void {
@@ -35,6 +37,12 @@ export class HeroesComponent implements OnInit {
       return true;
     }
     return false;
+  }
+
+  getListMockHeroes(): void {
+    this.heroesService.getListMockHeroes().subscribe((response) => {
+      this.heroesMock = response;
+    });
   }
 
 }
