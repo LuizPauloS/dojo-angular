@@ -1,17 +1,62 @@
-<p>
-  Primeiro Herói: {{ heroes[0].name }}
-</p>
-<h3>Lista de Heróis:</h3>
-<ul *ngFor="let heroe of heroes" >
-  <li>
-    <span>id: </span>{{ hero.id }}<br/>
-    <span>name: </span>{{ hero.name | uppercase }}<br/>
-    <span>power: </span>{{ hero.power | lowercase }}<br/>
-    <span>register: </span>{{ hero.dateRegister | date: 'dd/MM/yyyy' }}<br/>
-  </li>
-</ul>
+<div class="container">
+  <div class="card">
+    <div class="card-header">
+      Dojo de Angular - Tour of Heroes
+    </div>
+    <div class="card-body">
+      <p>
+        Primeiro Herói: {{ heroes[0].name }}
+      </p>
+      <h3>Lista de Heróis:</h3>
+      <ul>
+        <li *ngFor="let hero of heroes">
+          <span>id: </span>{{ hero.id }}<br/>
+          <span>name: </span>{{ hero.name | uppercase }}<br/>
+          <span>power: </span>{{ hero.power | lowercase }}<br/>
+          <span>register: </span>{{ hero.dateRegister | date: 'dd/MM/yyyy' }}<br/>
+        </li>
+      </ul>
 
-<div>
-  <label>name:</label>
-  <input [(ngModel)]="heroes[0].name" placeholder="Input name of heroe"/>
+      <div>
+        <label>name:</label>
+        <input [(ngModel)]="heroes[0].name" placeholder="Input name of hero"/>
+      </div>
+      <div>
+        <label>power:</label>
+        <input [(ngModel)]="heroes[0].power" placeholder="Input power of hero"/>
+      </div>
+
+      <h3>Lista de Heróis Mocados:</h3>
+      <div class="list-heroes-mock">
+        <ul>
+          <li *ngFor="let hero of heroesMock" [class.selected]="hero === selectedHero" (click)="onSelectHero(hero)">
+            <span class="badge">id: </span>{{ hero.id }}<br/>
+            <span class="badge">name: </span>{{ hero.name | uppercase }}<br/>
+            <span class="badge">power: </span>{{ hero.power | lowercase }}<br/>
+            <span class="badge">register: </span>{{ hero.dateRegister | date: 'dd/MM/yyyy' }}<br/>
+          </li>
+        </ul>
+      </div>
+      <div *ngIf="selectedHero">
+        <hr>
+        <h3>{{selectedHero.name | uppercase }}</h3>
+        <div><span>id: </span>{{selectedHero.id}}</div>
+        <div>
+          <label>name:
+            <input [(ngModel)]="selectedHero.name" placeholder="name"/>
+          </label>
+        </div>
+        <div>
+          <label>power:
+            <input [(ngModel)]="selectedHero.power" placeholder="power"/>
+          </label>
+        </div>
+        <div>
+          <label>register:
+            <input type="datetime" [(ngModel)]="selectedHero.dateRegister" placeholder="dateRegister"/>
+          </label>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
