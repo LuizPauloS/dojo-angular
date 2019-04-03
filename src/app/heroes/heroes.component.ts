@@ -1,3 +1,4 @@
+import { FormGroup } from '@angular/forms';
 import { Component, OnInit } from '@angular/core';
 
 import { Hero } from '../model/hero';
@@ -14,6 +15,7 @@ export class HeroesComponent implements OnInit {
   heroes: Hero[];
   selectedHero: Hero;
   heroesMock: Hero[];
+  // formHero: FormGroup;
 
   constructor(private heroesService: HeroesService) { }
 
@@ -39,7 +41,7 @@ export class HeroesComponent implements OnInit {
   }
 
   getListMockHeroes(): void {
-    this.heroesService.getListMockHeroes().subscribe((response) => {
+    this.heroesService.getListHeroes().subscribe((response) => {
       this.heroesMock = response;
     });
   }

@@ -1,5 +1,15 @@
 {
     "heroes": [
-      { "id": 1, "name": "Capitão América", "power": "Força Sobrenatural" }
+      { "id": 1, "name": "Capitão América", "power": "Força Sobrenatural", "dateRegister": "02/04/2019" },
+      { "id": 2, "name": "Mr. Nice", "power": "Force", "dateRegister": "02/04/2019" },
+      { "id": 3, "name": "Narco", "power": "Force", "dateRegister": "02/04/2019" },
+      { "id": 4, "name": "Bombasto", "power": "Force", "dateRegister": "02/04/2019" },
+      { "id": 5, "name": "Celeritas", "power": "Force", "dateRegister": "02/04/2019" },
+      { "id": 6, "name": "Magneta", "power": "Force", "dateRegister": "02/04/2019" },
+      { "id": 7, "name": "RubberMan", "power": "Force", "dateRegister": "02/04/2019" },
+      { "id": 8, "name": "Dynama", "power": "Force", "dateRegister": "02/04/2019" },
+      { "id": 9, "name": "Dr IQ", "power": "Force", "dateRegister": "02/04/2019" },
+      { "id": 10, "name": "Magma", "power": "Force", "dateRegister": "02/04/2019" },
+      { "id": 11, "name": "Tornado", "power": "Force", "dateRegister": "02/04/2019" }
     ]
 }

@@ -1,0 +1,25 @@
+<div class="container">
+  <table class="table table-striped">
+      <thead>
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">Name</th>
+          <th scope="col">Power</th>
+          <th scope="col">Date Register</th>
+          <th scope="col">Ações</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let hero of heroes" >
+          <th scope="row">{{ hero.id }}</th>
+          <td>{{ hero.name }}</td>
+          <td>{{ hero.power }}</td>
+          <td>{{ hero.dateRegister }}</td>
+          <td>
+            <button class="btn"><i class="fa fa-pencil"></i></button>
+            <button class="btn"><i class="fa fa-trash"></i></button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+</div>
