@@ -2,8 +2,10 @@
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { BrowserModule } from '@angular/platform-browser';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // TERCEIROS
+import { ToastrModule } from 'ngx-toastr';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // NOSSO
@@ -17,10 +19,12 @@ import { MessagesModule } from './messages/messages.module';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule,
     FormsModule,
     AppRoutingModule,
     MessagesModule,
-    AngularFontAwesomeModule
+    AngularFontAwesomeModule,
+    ToastrModule.forRoot()
   ],
   providers: [],
   bootstrap: [AppComponent]

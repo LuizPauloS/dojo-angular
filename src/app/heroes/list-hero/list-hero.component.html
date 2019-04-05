@@ -14,7 +14,7 @@
           <th scope="row">{{ hero.id }}</th>
           <td>{{ hero.name }}</td>
           <td>{{ hero.power }}</td>
-          <td>{{ hero.dateRegister }}</td>
+          <td>{{ hero.dateRegister | date: 'dd/MM/yyyy' }}</td>
           <td>
             <button class="btn"><i class="fa fa-pencil"></i></button>
             <button class="btn"><i class="fa fa-trash"></i></button>

@@ -12,6 +12,11 @@ export class HeroesService {
   constructor(private httpClient: HttpClient,
               private messagesService: MessagesService) { }
 
+  saveHero(hero: Hero): Observable<Hero> {
+    this.log('Adicionando novo Hero a api!');
+    return this.httpClient.post<Hero>(environment.heroes.save, hero);
+  }
+
   getListHeroes(): Observable<Hero[]> {
     this.log('Buscando lista de heróis!');
     // return of(HEROES); // preenche lista com dados do mock

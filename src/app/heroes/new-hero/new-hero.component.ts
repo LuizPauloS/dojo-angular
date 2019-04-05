@@ -1,5 +1,11 @@
+import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
+
+import { ToastrService } from 'ngx-toastr';
+
+import { isNullOrUndefined } from 'util';
+import { HeroesService } from './../heroes.service';
 
 @Component({
   selector: 'app-new-hero',
@@ -10,7 +16,9 @@ export class NewHeroComponent implements OnInit {
 
   formHero: FormGroup;
 
-  constructor() { }
+  constructor(private router: Router,
+              private toastr: ToastrService,
+              private heroesService: HeroesService) { }
 
   ngOnInit() {
     this.initForm();
@@ -25,7 +33,13 @@ export class NewHeroComponent implements OnInit {
   }
 
   save() {
-    // TODO save hero
+    if (!isNullOrUndefined(this.formHero.get('name').value && !isNullOrUndefined(this.formHero.get('power').value))) {
+      this.heroesService.saveHero(this.formHero.value).subscribe();
+      this.toastr.success('Hero adicionado com sucesso!');
+      this.router.navigate(['heroes/list']);
+    } else {
+      this.toastr.error('Formulário incompleto!');
+    }
   }
 
 }
