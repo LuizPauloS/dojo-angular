@@ -10,16 +10,20 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // NOSSO
 import { AppComponent } from './app.component';
+import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
+import { CommonComponent } from './common/common.component';
 import { MessagesModule } from './messages/messages.module';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    CommonComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
+    SharedModule,
     FormsModule,
     AppRoutingModule,
     MessagesModule,
