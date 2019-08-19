@@ -1,7 +1,11 @@
+td {
+  vertical-align: 0%;
+}
+
 .dojo-list {
   padding-top: 60px;
 }
 
-td {
-  vertical-align: 0%;
+.dojo-acoes-lista {
+  text-align: center;
 }

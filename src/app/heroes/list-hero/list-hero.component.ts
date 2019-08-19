@@ -10,6 +10,7 @@ import { HeroesService } from './../heroes.service';
 })
 export class ListHeroComponent implements OnInit {
 
+  hero: Hero;
   heroes: Hero[];
 
   constructor(private heroesService: HeroesService) { }
@@ -22,6 +23,11 @@ export class ListHeroComponent implements OnInit {
     this.heroesService.getListHeroes().subscribe((response) => {
       this.heroes = response;
     });
+  }
+
+  deletarHeroi(hero: Hero) {
+    this.hero = hero;
+    console.log(`DELETAR HERÓI: ${hero.name.toUpperCase()}`);
   }
 
 }
