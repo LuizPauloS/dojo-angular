@@ -1,12 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { CommonComponent } from './common/common.component';
-
 const routes: Routes = [
   { path: '', redirectTo: 'login', pathMatch: 'full' },
   { path: 'login', loadChildren: './login/login.module#LoginModule' },
-  { path: '', component: CommonComponent, children: [
+  { path: '', children: [
     { path: 'heroes', loadChildren: './heroes/heroes.module#HeroesModule' }
   ]}
 ];

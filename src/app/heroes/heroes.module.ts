@@ -1,3 +1,4 @@
+import { SharedModule } from './../shared/shared.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ReactiveFormsModule } from '@angular/forms';
@@ -19,6 +20,7 @@ import { ListHeroComponent } from './list-hero/list-hero.component';
   ],
   imports: [
     CommonModule,
+    SharedModule,
     ReactiveFormsModule,
     HttpClientModule,
     HeroesRoutingModule

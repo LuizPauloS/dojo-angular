@@ -12,13 +12,10 @@ import { AngularFontAwesomeModule } from 'angular-font-awesome';
 import { AppComponent } from './app.component';
 import { SharedModule } from './shared/shared.module';
 import { AppRoutingModule } from './app-routing.module';
-import { CommonComponent } from './common/common.component';
-import { MessagesModule } from './messages/messages.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
-    CommonComponent
+    AppComponent
   ],
   imports: [
     BrowserModule,
@@ -26,7 +23,6 @@ import { MessagesModule } from './messages/messages.module';
     SharedModule,
     FormsModule,
     AppRoutingModule,
-    MessagesModule,
     AngularFontAwesomeModule,
     ToastrModule.forRoot()
   ],

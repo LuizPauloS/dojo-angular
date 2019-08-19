@@ -3,7 +3,9 @@ import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
-  template: '<router-outlet></router-outlet>'
+  template: `<div class="container">
+              <router-outlet></router-outlet>
+            </div>`
 })
 export class AppComponent {
   title = 'ao dojo de Angular';

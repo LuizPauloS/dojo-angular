@@ -1,25 +1,29 @@
-<div class="container">
-  <table class="table table-striped">
-      <thead>
-        <tr>
-          <th scope="col">#</th>
-          <th scope="col">Name</th>
-          <th scope="col">Power</th>
-          <th scope="col">Date Register</th>
-          <th scope="col">Ações</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let hero of heroes" >
-          <th scope="row">{{ hero.id }}</th>
-          <td>{{ hero.name }}</td>
-          <td>{{ hero.power }}</td>
-          <td>{{ hero.dateRegister | date: 'dd/MM/yyyy' }}</td>
-          <td>
-            <button class="btn"><i class="fa fa-pencil"></i></button>
-            <button class="btn"><i class="fa fa-trash"></i></button>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-</div>
+<app-header></app-header>
+  <div class="container-fluid dojo-list">
+    <div class="table-responsive">
+      <table class="table table-striped table-sm">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Nome</th>
+            <th scope="col">Força</th>
+            <th scope="col">Registro</th>
+            <th scope="col">Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let hero of heroes" >
+            <td scope="row">{{ hero.id }}</td>
+            <td scope="row">{{ hero.name }}</td>
+            <td scope="row">{{ hero.power }}</td>
+            <td scope="row">{{ hero.dateRegister | date: 'dd/MM/yyyy' }}</td>
+            <td scope="row">
+              <a class="btn" href="#"><i class="fa fa-pencil"></i></a>
+              <a class="btn" href="#"><i class="fa fa-trash"></i></a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+<app-footer></app-footer>

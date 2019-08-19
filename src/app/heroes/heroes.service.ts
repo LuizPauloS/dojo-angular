@@ -4,13 +4,11 @@ import { HttpClient } from '@angular/common/http';
 
 import { Hero } from './../model/hero';
 import { environment } from 'src/environments/environment';
-import { MessagesService } from './../messages/messages.service';
 
 @Injectable()
 export class HeroesService {
 
-  constructor(private httpClient: HttpClient,
-              private messagesService: MessagesService) { }
+  constructor(private httpClient: HttpClient) { }
 
   saveHero(hero: Hero): Observable<Hero> {
     this.log('Adicionando novo Hero a api!');
@@ -24,6 +22,6 @@ export class HeroesService {
   }
 
   private log(message: string): void {
-    this.messagesService.sendMessages(message);
+    console.log(message);
   }
 }
