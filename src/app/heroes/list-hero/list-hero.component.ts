@@ -25,9 +25,13 @@ export class ListHeroComponent implements OnInit {
     });
   }
 
-  deletarHeroi(hero: Hero) {
+  setarHeroi(hero: Hero): void {
     this.hero = hero;
-    console.log(`DELETAR HERÓI: ${hero.name.toUpperCase()}`);
+  }
+
+  deletarHeroi() {
+    this.heroes = this.heroes.filter(h => h !== this.hero);
+    console.log(`DELETAR HERÓI: ${this.hero.name.toUpperCase()}`);
   }
 
 }

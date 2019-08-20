@@ -12,8 +12,8 @@
         {{ message }}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Não</button>
-        <button type="button" class="btn btn-primary">Sim</button>
+        <button type="button" class="btn btn-danger" data-dismiss="modal">Não</button>
+        <button type="button" class="btn btn-primary" data-dismiss="modal" (click)="notify.emit()">Sim</button>
       </div>
     </div>
   </div>
