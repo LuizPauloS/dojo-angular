@@ -29,3 +29,7 @@ body, input[type="text"], button {
 * {
   font-family: Poppins-Light;
 }
+
+.dojo-top {
+  padding-top: 60px;
+}

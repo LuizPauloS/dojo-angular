@@ -32,7 +32,7 @@ export class NewHeroComponent implements OnInit {
     });
   }
 
-  save() {
+  cadastrar() {
     if (!isNullOrUndefined(this.formHero.get('name').value && !isNullOrUndefined(this.formHero.get('power').value))) {
       this.heroesService.saveHero(this.formHero.value).subscribe();
       this.toastr.success('Hero adicionado com sucesso!');

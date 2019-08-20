@@ -1,17 +1,18 @@
-<div class="container">
-  <form [formGroup]="formHero">
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" placeholder="Informe o nome do Herói" formControlName="name">
-    </div>
-    <div class="form-group">
-      <label for="power">Power</label>
-      <input type="text" class="form-control" id="power" placeholder="Informe o poder do Herói" formControlName="power">
-    </div>
-    <div class="form-group">
-      <label for="dateRegister">Date Register</label>
-      <label class="form-control" id="dateRegister">{{ formHero.get('dateRegister').value }}</label>
-    </div>
-    <button type="submit" class="btn btn-primary" (click)="save()">Salvar</button>
-  </form>
-</div>
+<app-header></app-header>
+<form [formGroup]="formHero" class="dojo-top">
+  <div class="form-group">
+    <label for="name">Nome:</label>
+    <input type="text" class="form-control" id="name" placeholder="Informe o nome do Herói" formControlName="name">
+  </div>
+  <div class="form-group">
+    <label for="power">Força:</label>
+    <input type="text" class="form-control" id="power" placeholder="Informe o poder do Herói" formControlName="power">
+  </div>
+  <div class="form-group">
+    <label for="dateRegister">Data de Registro:</label>
+    <input type="date" class="form-control" id="dateRegister" placeholder="Informe a data de registro do Herói" formControlName="dateRegister">
+  </div>
+  <div class="dojo-btn">
+    <button type="submit" class="btn btn-primary btn-block" (click)="cadastrar()">Cadastrar</button>
+  </div>
+</form>
