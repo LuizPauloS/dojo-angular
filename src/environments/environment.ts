@@ -4,7 +4,8 @@ export const environment = {
   production: false,
   heroes: {
     save: api + '/heroes', // POST
-    findAll: api + '/heroes' // GET
+    findAll: api + '/heroes', // GET
+    delete: api + '/heroes' // GET
   }
 };
 

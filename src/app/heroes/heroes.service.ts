@@ -10,7 +10,7 @@ export class HeroesService {
 
   constructor(private httpClient: HttpClient) { }
 
-  saveHero(hero: Hero): Observable<Hero> {
+  salvarHeroi(hero: Hero): Observable<Hero> {
     this.log('Adicionando novo Hero a api!');
     return this.httpClient.post<Hero>(environment.heroes.save, hero);
   }
@@ -23,5 +23,9 @@ export class HeroesService {
 
   private log(message: string): void {
     console.log(message);
+  }
+
+  deletarHeroi(hero: Hero): Observable<Hero> {
+    return this.httpClient.delete<Hero>(`${environment.heroes.delete}/${hero.id}`);
   }
 }

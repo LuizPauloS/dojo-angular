@@ -2,9 +2,9 @@ import { Router } from '@angular/router';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, Validators, FormControl } from '@angular/forms';
 
+import * as _ from 'lodash';
 import { ToastrService } from 'ngx-toastr';
 
-import { isNullOrUndefined } from 'util';
 import { HeroesService } from './../heroes.service';
 
 @Component({
@@ -28,17 +28,27 @@ export class NewHeroComponent implements OnInit {
     this.formHero = new FormGroup({
       name: new FormControl('', [Validators.required]),
       power: new FormControl('', [Validators.required]),
-      dateRegister: new FormControl(new Date())
+      dateRegister: new FormControl('', [Validators.required])
     });
   }
 
-  cadastrar() {
-    if (!isNullOrUndefined(this.formHero.get('name').value && !isNullOrUndefined(this.formHero.get('power').value))) {
-      this.heroesService.saveHero(this.formHero.value).subscribe();
-      this.toastr.success('Hero adicionado com sucesso!');
-      this.router.navigate(['heroes/list']);
-    } else {
-      this.toastr.error('Formulário incompleto!');
+  cadastrar(): void {
+    try {
+      if (!_.isUndefined(this.formHero) && this.formHero.valid) {
+        this.heroesService.salvarHeroi(this.formHero.value).subscribe(heroiResponse => {
+          this.toastr.success(`Herói ${heroiResponse.name} adicionado com sucesso!`);
+          this.router.navigate(['heroes/list']);
+        }, (error: Error) => {
+          console.log(error);
+          this.toastr.error(`Ocorreu um erro inesperado ao adicionar herói ${this.formHero.get('name').value}:
+            ${error.message}`);
+        });
+      } else {
+        this.toastr.warning('Formulário incompleto! Verifique os dados e tente novamente.');
+      }
+    } catch (err) {
+      console.log(err);
+      this.toastr.error('Ocorreu um erro inesperado ao salvar novo Herói: ' + err);
     }
   }
 

@@ -1,6 +1,8 @@
 import { Hero } from './../../model/hero';
 import { Component, OnInit } from '@angular/core';
 
+import * as _ from 'lodash';
+import { ToastrService } from 'ngx-toastr';
 import { HeroesService } from './../heroes.service';
 
 @Component({
@@ -11,11 +13,15 @@ import { HeroesService } from './../heroes.service';
 export class ListHeroComponent implements OnInit {
 
   hero: Hero;
+  title: string;
   heroes: Hero[];
+  message: string;
 
-  constructor(private heroesService: HeroesService) { }
+  constructor(private toastr: ToastrService,
+              private heroesService: HeroesService) { }
 
   ngOnInit() {
+    this.setarValoresModal();
     this.getListMockHeroes();
   }
 
@@ -29,9 +35,23 @@ export class ListHeroComponent implements OnInit {
     this.hero = hero;
   }
 
-  deletarHeroi() {
-    this.heroes = this.heroes.filter(h => h !== this.hero);
-    console.log(`DELETAR HERÓI: ${this.hero.name.toUpperCase()}`);
+  deletarHeroi(): void {
+    try {
+      this.heroesService.deletarHeroi(this.hero).subscribe(() => {
+        this.heroes = this.heroes.filter(h => h !== this.hero);
+        this.toastr.success(`Herói ${this.hero.name} deletado com sucesso!`);
+      }, (error: Error) => {
+        console.log(error);
+        this.toastr.error(`Ocorreu um erro ao deletar Herói ${this.hero.name}: ${error.message}`);
+      });
+    } catch (err) {
+      console.log(err);
+      this.toastr.error('Ocorreu um erro inesperado ao deletar Herói: ' + err);
+    }
   }
 
+  setarValoresModal(): void {
+    this.title = 'Deletar Herói';
+    this.message = `Tem certeza que você deseja excluir este Herói ?`;
+  }
 }
