@@ -67,34 +67,10 @@
       "dateRegister": "2019-04-05T00:20:31.493Z"
     },
     {
-      "name": "testeq",
-      "power": "teste",
-      "dateRegister": "2019-04-05T00:20:31.493Z",
-      "id": 12
-    },
-    {
       "name": "Homem Aranha",
       "power": "Aranha",
       "dateRegister": "2019-04-05T01:12:25.901Z",
       "id": 13
-    },
-    {
-      "name": "Wolverine",
-      "power": "Garras afiadas",
-      "dateRegister": "2019-04-05T01:12:56.252Z",
-      "id": 14
-    },
-    {
-      "name": "",
-      "power": "",
-      "dateRegister": "2019-08-20T05:49:22.134Z",
-      "id": 15
-    },
-    {
-      "name": "",
-      "power": "",
-      "dateRegister": "2019-08-20T05:52:39.448Z",
-      "id": 16
     }
   ]
 }

@@ -5,7 +5,8 @@ export const environment = {
   heroes: {
     save: api + '/heroes', // POST
     findAll: api + '/heroes', // GET
-    delete: api + '/heroes' // GET
+    findById: api + '/heroes', // GET
+    delete: api + '/heroes', // DELETE
   }
 };
 

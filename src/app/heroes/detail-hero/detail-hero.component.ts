@@ -1,7 +1,9 @@
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
 import { Component, OnInit, Input } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
 
 import { Hero } from './../../model/hero';
+import { HeroesService } from './../heroes.service';
 
 @Component({
   selector: 'app-detail-hero',
@@ -11,21 +13,25 @@ import { Hero } from './../../model/hero';
 export class DetailHeroComponent implements OnInit {
 
   @Input() hero: Hero;
-  formHero: FormGroup;
 
-  constructor() { }
+  constructor(private location: Location,
+              private heroesService: HeroesService,
+              private activatedRoute: ActivatedRoute) { }
 
   ngOnInit() {
-    this.initForm();
+    this.getHeroById();
   }
 
-  initForm(): void {
-    this.formHero = new FormGroup({
-      id: new FormControl('', [Validators.required]),
-      name: new FormControl('', [Validators.required]),
-      power: new FormControl('', [Validators.required]),
-      dateRegister: new FormControl(new Date())
+  getHeroById(): void {
+    const id = +this.activatedRoute.snapshot.paramMap.get('id');
+    this.heroesService.findById(id).subscribe(response => {
+      console.log(response);
+      this.hero = response;
     });
+  }
+
+  voltar() {
+    this.location.back();
   }
 
 }

@@ -8,8 +8,8 @@ import { DetailHeroComponent } from './detail-hero/detail-hero.component';
 const heroesRoutes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },
   { path: 'new', component: NewHeroComponent },
-  { path: 'detail', component: DetailHeroComponent },
-  { path: 'list', component: ListHeroComponent }
+  { path: 'list', component: ListHeroComponent },
+  { path: 'detail/:id', component: DetailHeroComponent }
 ];
 
 @NgModule({

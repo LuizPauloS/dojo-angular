@@ -18,13 +18,14 @@
             <td scope="row">{{ hero.power }}</td>
             <td scope="row">{{ hero.dateRegister | date: 'dd/MM/yyyy' }}</td>
             <td scope="row" class="dojo-acoes-lista">
-              <a class="btn" routerLink='/heroes/detail' title="Visualizar Herói">
+              <a class="btn btn-link" routerLink="/heroes/detail/{{hero.id}}" title="Visualizar Herói">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </a>
-              <a class="btn" href="#" title="Editar Herói">
+              <a class="btn btn-link" href="#" title="Editar Herói">
                 <i class="fa fa-pencil"></i>
               </a>
-              <button class="btn" title="Deletar Herói" (click)="setarHeroi(hero)" data-toggle="modal" data-target="#exampleModal">
+              <button class="btn btn-link" title="Deletar Herói" (click)="setarHeroi(hero)"
+                  data-toggle="modal" data-target="#exampleModal">
                 <i class="fa fa-trash"></i>
               </button>
             </td>

@@ -1,22 +1,22 @@
-<div *ngIf="hero">
-  <hr>
-  <h3>{{ hero.name | uppercase }}</h3>
-  <form [formGroup]="formHero">
+<app-header></app-header>
+<div *ngIf="hero" class="dojo-top">
+  <h2>{{ hero.name | uppercase }}</h2>
+  <div>
     <div class="form-group">
-        <label for="id">Id</label>
-        <input type="text" class="form-control" id="id" formControlName="id" disabled=true>
-      </div>
-    <div class="form-group">
-      <label for="name">Name</label>
-      <input type="text" class="form-control" id="name" formControlName="name" placeholder="Informe nome do herói">
+      <label for="name">Nome: </label>
+      <input type="text" class="form-control" id="name" placeholder="Nome do herói" value="{{ hero.name }}" disabled>
     </div>
     <div class="form-group">
-      <label for="power">Password</label>
-      <input type="text" class="form-control" id="power" formControlName="power" placeholder="Informe o poder do herói">
+      <label for="power">Força: </label>
+      <input type="text" class="form-control" id="power" placeholder="Poder do herói" value="{{ hero.power }}" disabled>
     </div>
     <div class="form-group">
-      <label for="dateRegister">Date Register</label>
-      <input type="text" class="form-control" id="dateRegister" formControlName="dateRegister" disabled=true>
+      <label for="dateRegister">Data de Registro: </label>
+      <input type="text" class="form-control" id="dateRegister" value="{{ hero.dateRegister | date: 'dd/MM/yyyy' }}" disabled>
     </div>
-  </form>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary btn-block" (click)="voltar()">Voltar</button>
+  </div>
 </div>
+<app-footer></app-footer>

@@ -28,4 +28,8 @@ export class HeroesService {
   deletarHeroi(hero: Hero): Observable<Hero> {
     return this.httpClient.delete<Hero>(`${environment.heroes.delete}/${hero.id}`);
   }
+
+  findById(id: number): Observable<Hero> {
+    return this.httpClient.get<Hero>(`${environment.heroes.findById}/${id}`);
+  }
 }
