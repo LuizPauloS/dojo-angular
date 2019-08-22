@@ -12,7 +12,7 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let hero of heroes" >
+          <tr *ngFor="let hero of heroes | paginate: { itemsPerPage: 10, currentPage: page }" >
             <td scope="row">{{ hero.id }}</td>
             <td scope="row">{{ hero.name }}</td>
             <td scope="row">{{ hero.power }}</td>
@@ -32,6 +32,7 @@
           </tr>
         </tbody>
       </table>
+      <pagination-controls style="text-align: center" (pageChange)="page = $event" responsive="true"></pagination-controls>
     </div>
   </div>
 <app-modal title="{{ title }}" message="{{ message }}" (notify)="deletarHeroi()"></app-modal>

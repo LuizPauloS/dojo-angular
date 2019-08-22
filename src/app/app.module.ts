@@ -1,11 +1,11 @@
 // ANGULAR
 import { NgModule } from '@angular/core';
 import { FormsModule } from '@angular/forms';
-import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 // TERCEIROS
 import { ToastrModule } from 'ngx-toastr';
+import { NgxPaginationModule } from 'ngx-pagination';
 import { AngularFontAwesomeModule } from 'angular-font-awesome';
 
 // NOSSO
@@ -18,7 +18,6 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent
   ],
   imports: [
-    BrowserModule,
     BrowserAnimationsModule,
     SharedModule,
     FormsModule,

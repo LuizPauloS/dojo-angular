@@ -12,6 +12,7 @@ import { HeroesService } from './../heroes.service';
 })
 export class ListHeroComponent implements OnInit {
 
+  page = 1;
   hero: Hero;
   title: string;
   heroes: Hero[];
