@@ -29,12 +29,20 @@ export class EditHeroComponent implements OnInit {
   }
 
   getLoadHeroById(): void {
-    const id = +this.activatedRoute.snapshot.paramMap.get('id');
-    this.heroesService.findById(id).subscribe(response => {
-      console.log(response);
-      this.hero = response;
-      this.updateFormHero(this.hero);
-    });
+    try {
+      const id = +this.activatedRoute.snapshot.paramMap.get('id');
+      this.heroesService.findById(id).subscribe(response => {
+        console.log(response);
+        this.hero = response;
+        this.updateFormHero(this.hero);
+      }, (error: Error) => {
+        console.log(error);
+        this.toastr.error(`Ocorreu um erro ao buscar dados do Herói ${this.hero.name}: ${error.message}`);
+      });
+    } catch (err) {
+      console.log(err);
+      this.toastr.error(`Ocorreu um erro inesperado ao buscar dados do Herói ${this.hero.name}: ${err}`);
+    }
   }
 
   initFormHeroUpdate(): void {
