@@ -7,6 +7,7 @@ export const environment = {
     findAll: api + '/heroes', // GET
     findById: api + '/heroes', // GET
     delete: api + '/heroes', // DELETE
+    update: api + '/heroes' // PUT
   }
 };
 

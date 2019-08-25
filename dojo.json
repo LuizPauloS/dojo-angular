@@ -4,13 +4,13 @@
       "id": 1,
       "name": "Capitão América",
       "power": "Força Sobrenatural",
-      "dateRegister": "2019-04-05T00:20:31.493Z"
+      "dateRegister": "2019-08-26"
     },
     {
       "id": 2,
       "name": "Mr. Nice",
       "power": "Force",
-      "dateRegister": "2019-04-05T00:20:31.493Z"
+      "dateRegister": "2019-08-01"
     },
     {
       "id": 3,
@@ -71,12 +71,6 @@
       "power": "Aranha",
       "dateRegister": "2019-04-05T01:12:25.901Z",
       "id": 13
-    },
-    {
-      "name": "sgffdgdfgfdgfdg",
-      "power": "dfgdfgfdgfd",
-      "dateRegister": "2019-08-07",
-      "id": 14
     }
   ]
 }

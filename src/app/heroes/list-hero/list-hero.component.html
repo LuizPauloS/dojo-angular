@@ -1,5 +1,6 @@
 <app-header></app-header>
   <div class="dojo-top">
+    <h2>Lista de Heróis</h2>
     <div class="table-responsive">
       <table class="table table-striped table-sm">
         <thead>
@@ -18,13 +19,13 @@
             <td scope="row">{{ hero.power }}</td>
             <td scope="row">{{ hero.dateRegister | date: 'dd/MM/yyyy' }}</td>
             <td scope="row" class="dojo-acoes-lista">
-              <a class="btn btn-link" routerLink="/heroes/detail/{{hero.id}}" title="Visualizar Herói">
+              <a class="btn" routerLink="/heroes/detail/{{hero.id}}" title="Visualizar Herói">
                 <i class="fa fa-search" aria-hidden="true"></i>
               </a>
-              <a class="btn btn-link" href="#" title="Editar Herói">
+              <a class="btn" routerLink="/heroes/edit/{{hero.id}}" title="Editar Herói">
                 <i class="fa fa-pencil"></i>
               </a>
-              <button class="btn btn-link" title="Deletar Herói" (click)="setarHeroi(hero)"
+              <button class="btn" title="Deletar Herói" (click)="setarHeroi(hero)"
                   data-toggle="modal" data-target="#exampleModal">
                 <i class="fa fa-trash"></i>
               </button>

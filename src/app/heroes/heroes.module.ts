@@ -10,12 +10,14 @@ import { HeroesRoutingModule } from './heroes-routing.module';
 import { NewHeroComponent } from './new-hero/new-hero.component';
 import { ListHeroComponent } from './list-hero/list-hero.component';
 import { DetailHeroComponent } from './detail-hero/detail-hero.component';
+import { EditHeroComponent } from './edit-hero/edit-hero.component';
 
 @NgModule({
   declarations: [
     NewHeroComponent,
     DetailHeroComponent,
-    ListHeroComponent
+    ListHeroComponent,
+    EditHeroComponent
   ],
   imports: [
     CommonModule,

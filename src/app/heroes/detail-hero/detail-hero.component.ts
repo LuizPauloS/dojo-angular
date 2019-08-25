@@ -1,6 +1,6 @@
 import { Location } from '@angular/common';
 import { ActivatedRoute } from '@angular/router';
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 
 import { Hero } from './../../model/hero';
 import { HeroesService } from './../heroes.service';
@@ -12,7 +12,7 @@ import { HeroesService } from './../heroes.service';
 })
 export class DetailHeroComponent implements OnInit {
 
-  @Input() hero: Hero;
+  hero: Hero;
 
   constructor(private location: Location,
               private heroesService: HeroesService,
