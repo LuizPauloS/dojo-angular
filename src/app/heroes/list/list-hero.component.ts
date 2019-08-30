@@ -27,9 +27,17 @@ export class ListHeroComponent implements OnInit {
   }
 
   getListMockHeroes(): void {
-    this.heroesService.getListHeroes().subscribe((response) => {
-      this.heroes = response;
-    });
+    try {
+      this.heroesService.getListHeroes().subscribe((response) => {
+        this.heroes = response;
+      }, (error: Error) => {
+        console.log(error);
+        this.toastr.error(`Ocorreu um erro ao buscar lista Heróis: ${error.message}`);
+      });
+    } catch (err) {
+      console.log(err);
+      this.toastr.error('Ocorreu um erro inesperado ao buscar lista de Heróis: ' + err);
+    }
   }
 
   setarHeroi(hero: Hero): void {
@@ -47,7 +55,7 @@ export class ListHeroComponent implements OnInit {
       });
     } catch (err) {
       console.log(err);
-      this.toastr.error('Ocorreu um erro inesperado ao deletar Herói: ' + err);
+      this.toastr.error(`Ocorreu um erro inesperado ao deletar Herói: ${err}`);
     }
   }
 

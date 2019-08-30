@@ -32,4 +32,8 @@ export class HeroesService {
   findById(id: number): Observable<Hero> {
     return this.httpClient.get<Hero>(`${environment.heroes.findById}/${id}`);
   }
+
+  atualizarHeroi(hero: Hero): Observable<Hero> {
+    return this.httpClient.put<Hero>(`${environment.heroes.update}/${hero.id}`, hero);
+  }
 }

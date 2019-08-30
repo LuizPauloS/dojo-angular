@@ -1,0 +1,27 @@
+<app-header></app-header>
+<div class="dojo-top">
+  <h2>Editar Herói: </h2>
+  <hr>
+  <div [formGroup]="formHero">
+    <div class="form-group">
+        <label for="id">Id: </label>
+        <input type="text" class="form-control" id="id" placeholder="Identificador do herói" formControlName="id">
+      </div>
+    <div class="form-group">
+      <label for="name">Nome: </label>
+      <input type="text" class="form-control" id="name" placeholder="Nome do herói" formControlName="name">
+    </div>
+    <div class="form-group">
+      <label for="power">Força: </label>
+      <input type="text" class="form-control" id="power" placeholder="Poder do herói" formControlName="power">
+    </div>
+    <div class="form-group">
+      <label for="dateRegister">Data de Registro: </label>
+      <input type="date" class="form-control" id="dateRegister" placeholder="Data de registro do herói" formControlName="dateRegister">
+    </div>
+  </div>
+  <div class="form-group">
+    <button class="btn btn-primary btn-block" (click)="salvarHeroi()">Salvar</button>
+  </div>
+</div>
+<app-footer></app-footer>
