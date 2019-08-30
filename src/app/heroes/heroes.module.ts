@@ -5,12 +5,13 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { HeroesService } from './heroes.service';
 import { NgxPaginationModule } from 'ngx-pagination';
+
 import { SharedModule } from './../shared/shared.module';
+import { NewHeroComponent } from './new/new-hero.component';
 import { HeroesRoutingModule } from './heroes-routing.module';
-import { NewHeroComponent } from './new-hero/new-hero.component';
-import { ListHeroComponent } from './list-hero/list-hero.component';
-import { DetailHeroComponent } from './detail-hero/detail-hero.component';
-import { EditHeroComponent } from './edit-hero/edit-hero.component';
+import { EditHeroComponent } from './edit/edit-hero.component';
+import { ListHeroComponent } from './list/list-hero.component';
+import { DetailHeroComponent } from './detail/detail-hero.component';
 
 @NgModule({
   declarations: [

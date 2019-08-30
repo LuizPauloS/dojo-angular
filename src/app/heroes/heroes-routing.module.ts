@@ -1,10 +1,10 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { NewHeroComponent } from './new-hero/new-hero.component';
-import { EditHeroComponent } from './edit-hero/edit-hero.component';
-import { ListHeroComponent } from './list-hero/list-hero.component';
-import { DetailHeroComponent } from './detail-hero/detail-hero.component';
+import { NewHeroComponent } from './new/new-hero.component';
+import { EditHeroComponent } from './edit/edit-hero.component';
+import { ListHeroComponent } from './list/list-hero.component';
+import { DetailHeroComponent } from './detail/detail-hero.component';
 
 const heroesRoutes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },

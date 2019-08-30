@@ -5,8 +5,8 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
 import * as _ from 'lodash';
 import { ToastrService } from 'ngx-toastr';
 
-import { Hero } from './../../model/hero';
-import { HeroesService } from './../heroes.service';
+import { Hero } from '../../model/hero';
+import { HeroesService } from '../heroes.service';
 
 @Component({
   selector: 'app-edit-hero',
